@@ -13,13 +13,15 @@ const app       = express();
 const server    = http.createServer(app);
 const io        = socketio(server);
 
+// on connect
 io.on('connection', socket => {
     // console.log(`new WS connected`);
+    
     // on user join room
     socket.on('joinRoom', ({username, room}) => {
         var user    = joinUser(socket.id, username, room);        
 
-        // join spesefic rool
+        // join spesefic room
         socket.join(user.room);
 
         // send room name and users to joined uers

@@ -14,17 +14,17 @@ const socket = io();
 socket.emit('joinRoom', { username, room });
 
 // Get room and users
-socket.on('roomUsers', ({ room, users }) => {
+socket.on('roomInfo', ({ room, users }) => {
   outputRoomName(room);
   outputUsers(users);
 });
 
 // Message from server
 socket.on('message', message => {
-  console.log(message);
+  // console.log(message);
   outputMessage(message);
 
-  // Scroll down
+  // focus on bottom
   chatMessages.scrollTop = chatMessages.scrollHeight;
 });
 
@@ -32,7 +32,7 @@ socket.on('message', message => {
 chatForm.addEventListener('submit', e => {
   e.preventDefault();
 
-  // Get message text
+  // Get message value
   let msg = e.target.elements.msg.value;
   
   msg = msg.trim();

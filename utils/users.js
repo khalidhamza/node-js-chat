@@ -7,7 +7,7 @@ var users   = [];
  * @param string username 
  * @param string room 
  * 
- * @return object user 
+ * @return object joinedUser 
  */
 function joinUser(id, username, room)
 {
@@ -33,7 +33,7 @@ function getUser(id)
  * 
  * @param string id 
  * 
- * @return object users
+ * @return object leavedUser
  */
 function leaveUser(id)
 {
@@ -45,13 +45,14 @@ function leaveUser(id)
 
 /**
  * Get Room Users
+ * 
  * @param string room 
  * 
  * @return array users 
  */
 function getRoomusers(room) 
 {
-//    return [room];
+//    return room;
     return users.filter(user => user.room === room);    
 }
 
