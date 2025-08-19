@@ -71,6 +71,3 @@ This project currently does not specify a license. Please contact the repository
 
 - [@khalidhamza](https://github.com/khalidhamza)
 
----
-
-**Note:** This README is a template based on typical Node.js chat app setups. For more specific setup, features, and usage instructions, please refer to the actual code in the repository.
